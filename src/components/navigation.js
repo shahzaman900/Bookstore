@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 export default function Navigation() {
   return (
     <>
-      <header className='menu'>
-        <div className='menu-items'>
+      <header className="menu">
+        <div className="menu-items">
           <h1>logo</h1>
-          <ul className='ul'>
+          <ul className="ul">
             <li>
               <Link to="/">Books</Link>
             </li>
@@ -21,5 +21,5 @@ export default function Navigation() {
         </div>
       </header>
     </>
-  )
+  );
 }
