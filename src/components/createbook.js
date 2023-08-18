@@ -6,11 +6,11 @@ export default function CreateBook() {
         <input type="text" placeholder="Enter book name" />
         <select name="auther">
           <option value="volvo">select auther</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
+          <option value="saab">Shah</option>
+          <option value="mercedes">Zaman</option>
+          <option value="audi">Khan</option>
         </select>
-        <button type="button">Add Book</button>
+        <button type="submit">Add Book</button>
       </div>
     </>
   );

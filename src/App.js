@@ -1,9 +1,9 @@
 import './App.css';
 import './components/categories.css';
 import { Route, Routes } from 'react-router-dom';
-import BookList from './components/booklist';
 import Categories from './components/categories';
 import Navigation from './components/navigation';
+import Books from './components/books';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <section className="bookstoresection">
         <Navigation />
         <Routes>
-          <Route path="/" element={<BookList />} />
+          <Route path="/" element={<Books />} />
           <Route path="/categories" element={<Categories />} />
         </Routes>
       </section>

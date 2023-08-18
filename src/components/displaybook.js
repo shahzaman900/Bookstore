@@ -7,6 +7,7 @@ export default function Book({ book }) {
         <strong>Auther: </strong>
         { book.auther }
       </p>
+      <button type="button">Delete</button>
     </>
   );
 }
