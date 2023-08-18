@@ -1,0 +1,18 @@
+.menu {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  background-color: #fafafa;
+}
+
+.menu-items {
+  gap: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.ul {
+  display: flex;
+  gap: 1rem;
+}
+
