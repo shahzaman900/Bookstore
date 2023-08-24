@@ -150,12 +150,6 @@ npx stylelint "**/*.{css,scss}"
 <p align="right">(<a href="#live-demo">back to top</a>)</p>
 
 
-## 🎥 Project Presentation
-
--   Project Presentation: will add soon
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
