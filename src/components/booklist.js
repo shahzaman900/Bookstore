@@ -4,7 +4,6 @@ import Book from './displaybook';
 
 export default function BookList() {
   const books = useSelector((state) => state.books);
-  console.log(books);
   return (
     <>
       {

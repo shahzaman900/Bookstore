@@ -12,8 +12,8 @@ export default function Book({ book }) {
         <strong>Auther: </strong>
         { book.author }
       </p>
-      <button type="button" onClick={dispatch(addBook)}>Delete</button>
-      <button type="button" onClick={dispatch(removeBook)}>Add</button>
+      <button type="button" onClick={() => dispatch(addBook())}>Delete</button>
+      <button type="button" onClick={() => dispatch(removeBook())}>Add</button>
     </>
   );
 }
