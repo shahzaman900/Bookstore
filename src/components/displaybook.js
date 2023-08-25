@@ -2,10 +2,11 @@
 export default function Book({ book }) {
   return (
     <>
-      <h1>{ book.bookname }</h1>
+      <h1>{ book.title }</h1>
+      <p>{ book.category }</p>
       <p>
         <strong>Auther: </strong>
-        { book.auther }
+        { book.author }
       </p>
       <button type="button">Delete</button>
     </>
