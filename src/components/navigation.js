@@ -16,7 +16,6 @@ export default function Navigation() {
           </ul>
         </div>
         <div>
-          {/* <img src="" alt="" /> */}
           <p>shah</p>
         </div>
       </header>
