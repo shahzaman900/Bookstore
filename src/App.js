@@ -1,5 +1,6 @@
 import './App.css';
 import './components/categories.css';
+import './components/booklist.css';
 import { Route, Routes } from 'react-router-dom';
 import Categories from './components/categories';
 import Navigation from './components/navigation';
