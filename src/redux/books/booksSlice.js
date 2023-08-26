@@ -1,20 +1,35 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// appid: 1llqPGV5eTnNvJ425fbb
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/S3DmuYYK5Cn1UH3umydd/books';
 
-// const getid = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/';
-
-const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/1llqPGV5eTnNvJ425fbb/books';
-
-export const addBook = createAsyncThunk('books/addBook', async (data) => {
+// create book
+export const addBook = createAsyncThunk('create book', async (data, { rejectWithValue }) => {
   try {
-    const book = await axios.post(url, data);
-    const res = await book.json();
-    return res;
+    await axios.post(url, data);
+    return data;
   } catch (error) {
-    throw new Error('Add failed');
+    return rejectWithValue(error);
+  }
+});
+
+// get books
+export const getBook = createAsyncThunk('books/getbooks', async () => {
+  try {
+    const responce = await axios.get(url);
+    return responce.data;
+  } catch (error) {
+    throw new Error('did not load data');
+  }
+});
+
+// delete book
+export const deleteBookFromBooks = createAsyncThunk('books/deleteBook', async (bookId) => {
+  try {
+    await axios.delete(`${url}/${bookId}`);
+    return bookId;
+  } catch (error) {
+    throw new Error('Book has been deleted');
   }
 });
 
@@ -22,24 +37,33 @@ const books = createSlice({
   name: 'books',
   initialState: {
     books: [],
-    loading: false,
+    status: '',
     error: null,
   },
-  reducers: {},
-  extraReducers: {
-    [addBook.pending]: (state) => {
-      state.loading = true;
-    },
-    [addBook.fulfilled]: (state, action) => {
-      state.loading = false;
-      state.books.push(action.payload);
-    },
-    [addBook.rejected]: (state, action) => {
-      state.loading = false;
-      state.books = action.payload;
-    },
+  extraReducers(builder) {
+    builder
+      .addCase(getBook.fulfilled, (state, action) => {
+        const booksData = action.payload;
+        const arrayofBooks = Object.keys(booksData).map((itemId) => ({
+          item_id: itemId,
+          ...booksData[itemId][0],
+        }));
+
+        return {
+          ...state,
+          isLoading: false,
+          books: arrayofBooks,
+        };
+      })
+      .addCase(addBook.fulfilled, (state, action) => {
+        state.loading = false;
+        state.books.push(action.payload);
+      })
+      .addCase(deleteBookFromBooks.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.books = state.books.filter((book) => book.item_id !== action.payload);
+      });
   },
 });
 
-// export const { removeBook } = books.actions;
 export default books.reducer;

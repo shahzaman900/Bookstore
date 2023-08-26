@@ -6,7 +6,6 @@ import { addBook } from '../redux/books/booksSlice';
 
 export default function CreateBook() {
   const options = ['Action', 'Science Fiction', 'Economy', 'Non-fiction'];
-  // const [id, setId] = useState(0);
   const [book, setbook] = useState({
     item_id: uuidv4(),
     title: '',
