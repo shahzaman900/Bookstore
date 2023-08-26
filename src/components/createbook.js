@@ -1,14 +1,17 @@
+/* eslint-disable import/no-extraneous-dependencies */
+import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { addBook } from '../redux/books/booksSlice';
 
 export default function CreateBook() {
-  const [id, setId] = useState(0);
+  const options = ['Action', 'Science Fiction', 'Economy', 'Non-fiction'];
+  // const [id, setId] = useState(0);
   const [book, setbook] = useState({
-    item_id: id,
+    item_id: uuidv4(),
     title: '',
     author: '',
-    category: 'shah',
+    category: options[0],
   });
   const dispatch = useDispatch();
   const handlechange = (e) => {
@@ -16,9 +19,8 @@ export default function CreateBook() {
   };
 
   const addbook = () => {
-    setId(id + 1);
-    console.log(book);
-    dispatch(addBook(addBook(book)));
+    setbook({ ...book, item_id: uuidv4() });
+    dispatch(addBook(book));
   };
 
   return (
