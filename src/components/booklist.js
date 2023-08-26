@@ -1,18 +1,18 @@
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import CreateBook from './createbook';
-import Book from './displaybook';
+// import Book from './displaybook';
 
 export default function BookList() {
-  const books = useSelector((state) => state.books);
+  // const books = useSelector((state) => state.books);
   return (
     <>
-      {
-        books.map((book) => (
+      {/* {
+        books?.map((book) => (
           <div key={book.item_id}>
-            <Book book={book} />
+            <Book bookDetail={book} />
           </div>
         ))
-      }
+      } */}
       <hr />
       <CreateBook />
     </>

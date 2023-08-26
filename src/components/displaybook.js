@@ -1,19 +1,18 @@
 /* eslint-disable react/prop-types */
 import { useDispatch } from 'react-redux';
-import { addBook, removeBook } from '../redux/books/booksSlice';
+import { removeBook } from '../redux/books/booksSlice';
 
-export default function Book({ book }) {
+export default function Book({ bookDetail }) {
   const dispatch = useDispatch();
   return (
     <>
-      <h1>{ book.title }</h1>
-      <p>{ book.category }</p>
+      <h1>{ bookDetail.title }</h1>
+      <p>{ bookDetail.category }</p>
       <p>
         <strong>Auther: </strong>
-        { book.author }
+        { bookDetail.author }
       </p>
-      <button type="button" onClick={() => dispatch(addBook())}>Delete</button>
-      <button type="button" onClick={() => dispatch(removeBook())}>Add</button>
+      <button type="button" onClick={() => dispatch(removeBook(bookDetail.item_id))}>Delete</button>
     </>
   );
 }
