@@ -1,0 +1,150 @@
+.Current-Chapter {
+  height: 1.125rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.School-of .Current-Chapter {
+  opacity: 0.5;
+  font-size: 0.813rem;
+  color: var(--black-two);
+}
+
+.Lesson-Panel {
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4px;
+  width: 80%;
+  background-color: white;
+  padding: 2rem;
+  border: solid 1px whitesmoke;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.School-of {
+  height: 1.125rem;
+  margin: 0 2.438rem 0 0;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.Title {
+  height: 1.813rem;
+  font-size: 1.375rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: var(--black-two);
+}
+
+.Suzanne-Collins {
+  height: 1.188rem;
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.vertical {
+  height: 20px;
+  background-color: rgb(216, 216, 216);
+  width: 2px;
+}
+
+.btn {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.Comments {
+  height: 1.188rem;
+  margin: 0.188rem 0.938rem 0.125rem 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+  background-color: transparent;
+  border: none;
+}
+
+.Oval-2 {
+  width: 4.25rem;
+  height: 4.25rem;
+  border-style: solid;
+  border-radius: 50%;
+  border: outset;
+  border-width: 5px;
+  border-image-slice: 1;
+}
+
+.circle {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.-Percent-Complete {
+  margin: 0.063rem 5.75rem 0 0.688rem;
+  font-size: 2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: black;
+}
+
+.Completed {
+  margin: 0.438rem 4.938rem 0.75rem 0.75rem;
+  opacity: 0.5;
+  font-size: 0.875rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: rgb(132, 132, 132);
+}
+
+.Current-Lesson {
+  height: 1.313rem;
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: var(--black-two);
+}
+
+.Rectangle-2 {
+  padding: 0.3rem 0.7rem;
+  color: white;
+  border-radius: 3px;
+  background-color: rgb(13, 120, 202);
+}
+
+.last {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}

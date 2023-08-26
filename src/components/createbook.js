@@ -1,4 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
+import './createbook.css';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
@@ -24,17 +25,19 @@ export default function CreateBook() {
 
   return (
     <>
-      <h1>Create Book </h1>
-      <div>
-        <input type="text" placeholder="Enter book name" name="title" value={book.title} onChange={handlechange} />
-        <select name="author" onChange={handlechange}>
-          {categories.map((option) => (
-            <option key={option} value={option}>
-              {option}
-            </option>
-          ))}
-        </select>
-        <button type="submit" onClick={() => addbook()}>Add Book</button>
+      <div className="form">
+        <h1 className="Titleyy">Create Book </h1>
+        <div className="forminput">
+          <input className="Lesson-Panel1" type="text" placeholder="Enter book name" name="title" value={book.title} onChange={handlechange} />
+          <select className="Lesson-Panel2" name="author" onChange={handlechange}>
+            {categories.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+          <button type="submit" className="Rectangle-2" onClick={() => addbook()}>Add Book</button>
+        </div>
       </div>
     </>
   );
