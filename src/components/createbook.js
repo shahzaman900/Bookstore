@@ -5,12 +5,12 @@ import { useState } from 'react';
 import { addBook } from '../redux/books/booksSlice';
 
 export default function CreateBook() {
-  const options = ['Action', 'Science Fiction', 'Economy', 'Non-fiction'];
+  const categories = ['Tech', 'Science', 'Develotment', 'HR'];
   const [book, setbook] = useState({
     item_id: uuidv4(),
     title: '',
     author: '',
-    category: options[0],
+    category: categories[0],
   });
   const dispatch = useDispatch();
   const handlechange = (e) => {
@@ -26,12 +26,13 @@ export default function CreateBook() {
     <>
       <h1>Create Book </h1>
       <div>
-        <input type="text" placeholder="Enter book name" name="title" onChange={handlechange} />
+        <input type="text" placeholder="Enter book name" name="title" value={book.title} onChange={handlechange} />
         <select name="author" onChange={handlechange}>
-          <option value="volvo">select auther</option>
-          <option value="saab">Shah</option>
-          <option value="mercedes">Zaman</option>
-          <option value="audi">Khan</option>
+          {categories.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
         </select>
         <button type="submit" onClick={() => addbook()}>Add Book</button>
       </div>
